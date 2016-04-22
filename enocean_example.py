@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- encoding: utf-8 -*-
 from enocean.consolelogger import init_logging
 import enocean.utils
@@ -23,7 +23,7 @@ def assemble_radio_packet(transmitter_id):
 
 
 init_logging()
-communicator = SerialCommunicator()
+communicator = SerialCommunicator(port="/dev/ttyUSB0")
 communicator.start()
 print('The Base ID of your module is %s.' % enocean.utils.to_hex_string(communicator.base_id))
 
